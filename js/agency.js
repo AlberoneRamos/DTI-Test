@@ -17,7 +17,7 @@
         strings: ["Dive. Think. Innovate."],
         typeSpeed: 100,
         showCursor: true,
-        cursorChar: '|'
+        cursorChar: 'I'
     });
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({

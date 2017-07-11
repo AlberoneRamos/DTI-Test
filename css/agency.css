@@ -235,7 +235,7 @@ h1, h2, h3, h4, h5, h6 {
       -o-transition: transform 0.3s, opacity 0.2s;
       -ms-transition: transform 0.3s, opacity 0.2s;
       transition: transform 0.3s, opacity 0.2s;
-      top: 32%;
+      top: 28%;
       opacity: 0; }
     .navbar-custom .nav li a:before {
       content: "[";
@@ -300,7 +300,9 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 100px;
         bottom: 80%; }
     .navbar-custom .navbar-nav > .active > a {
-      border-radius: 3px; } }
+      border-radius: 3px; }
+    .navbar-custom .nav li a:before, .navbar-custom .nav li a:after {
+      top: 32%; } }
 @media (min-width: 768px) {
   .navbar-custom.affix {
     background-color: #2a2b30;
@@ -326,7 +328,6 @@ header {
       font-size: 22px;
       line-height: 22px;
       margin-bottom: 25px;
-      width: 70%;
       margin: auto; }
       header .intro-text .intro-lead-in:before {
         content: " ";
@@ -407,6 +408,12 @@ section {
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 15px; }
+    section h2.section-heading:after {
+      display: block;
+      content: ' ';
+      margin: auto;
+      width: 100px;
+      border-bottom: 2px solid #3e3990; }
   section h3.section-subheading {
     font-size: 16px;
     font-family: 'Ropa Sans', sans-serif;
@@ -703,7 +710,7 @@ ul.social-buttons {
     -moz-transition: all 0.3s;
     transition: all 0.3s; }
     ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
-      background-color: #33aab7; }
+      background-color: #3e3990; }
 
 .btn:focus,
 .btn:active,
@@ -784,6 +791,9 @@ ul.social-buttons {
 
 img::selection {
   background: transparent; }
+
+.fa-circle {
+  color: #33aab7; }
 
 img::-moz-selection {
   background: transparent; }
