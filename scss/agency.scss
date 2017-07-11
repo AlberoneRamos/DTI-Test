@@ -64,9 +64,40 @@ h1, h2, h3, h4, h5, h6 {
 // Restyled Primary Buttons
 
 .btn-primary {
-    @include button-variant(white, $theme-secondary, $theme-secondary);
+    border-color:$theme-secondary !important;
+    background:transparent !important; 
+    color:$theme-secondary !important;
+    overflow:hidden;
     @include heading-font;
     font-weight: 700;
+    &:after{
+        width:0;
+        height:0;
+        opacity:0;
+        border-radius:50%;
+        top:50%;
+        left:50%;
+        background-color:$theme-secondary !important;
+        @include transform(translateX(-50%) translateY(-50%));
+    }
+    &:hover{
+        color:#fff !important;
+        background:transparent !important;
+        &:after{
+            height:150px;
+            width:150px;
+            opacity:1;
+        }
+    }
+    &:active{
+        color:#fff !important;
+        background:transparent;
+        &:after{
+            height:250px;
+            width:250px;
+            opacity:1;
+        }
+    }
 }
 
 .btn {
@@ -273,7 +304,11 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    
+    .typed-cursor{
+        font-size:75px !important;
+        line-height:normal;
+
+    }
 }
 
 // Navbar Change on Scroll
@@ -336,7 +371,6 @@ header {
         }
         .intro-heading {
             @include heading-font;
-            font-weight: 700;
             font-size: 50px;
             line-height: 50px;
             display:inline;
@@ -424,54 +458,36 @@ section {
     text-transform: none;
 }
 
-// Portfolio Section
+// services Section
 
-#portfolio {
-    .portfolio-item {
-        margin: 0 0 15px;
+#services {
+    .services-item {
+        overflow:hidden;
         right: 0;
-        .portfolio-link {
+        padding:0 !important;
+        margin:5px !important;
+        display: inline-block ;
+        max-width:350px;
+        max-height:250px;
+        .services-link {
             display: block;
             position: relative;
             max-width: 400px;
-            margin: 0 auto;
-            .portfolio-hover {
-                background: fade($theme-primary, 90%);
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                transition: all ease 0.5s;
-                -webkit-transition: all ease 0.5s;
-                -moz-transition: all ease 0.5s;
-                &:hover {
-                    opacity: 1;
-                }
-                .portfolio-hover-content {
-                    position: absolute;
-                    width: 100%;
-                    height: 20px;
-                    font-size: 20px;
-                    text-align: center;
-                    top: 50%;
-                    margin-top: -12px;
-                    color: white;
-                    i {
-                        margin-top: -12px;
-                    }
-                    h3,
-                    h4 {
-                        margin: 0;
-                    }
-                }                
-            }            
+            margin: 0 auto;  
         }
-        .portfolio-caption {
-            max-width: 400px;
+        .services-caption {
+            position: absolute;
+            height:80px;
+            @include transform(translateY(100%));
+            width:100%;
+            @include transition(transform 0.4s, opacity 0.1s);
+            bottom:0px;
+            left:0px;
             margin: 0 auto;
-            background-color: white;
+            color:lighten($theme-secondary,15%);
+            background-color: $gray-darker;
             text-align: center;
-            padding: 25px;
+            padding: 15px;
             h4 {
                 text-transform: none;
                 margin: 0;
@@ -483,6 +499,12 @@ section {
                 margin: 0;
             }
         }
+        &:hover{
+            .services-caption{
+                
+                @include transform(translateY(0px));
+            }
+        }
     }
     * {
         z-index: 2;
@@ -490,8 +512,8 @@ section {
 }
 
 @media(min-width:767px) {
-    #portfolio {
-        .portfolio-item {
+    #services {
+        .services-item {
             margin: 0 0 30px;
         }
     }
@@ -811,7 +833,7 @@ ul.social-buttons {
     outline: none;
 }
 
-.portfolio-modal {
+.services-modal {
     .modal-dialog{
         margin: 0;
         height: 100%;
