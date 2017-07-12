@@ -1,28 +1,25 @@
 {
-  "name": "agency",
-  "title": "Agency",
-  "version": "3.3.7+1",
-  "homepage": "http://startbootstrap.com/template-overviews/agency",
-  "author": "Start Bootstrap",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "nothing",
+  "main": "JS/client.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "node": "^0.0.0",
+    "node-sass": "^4.5.0",
+    "sass": "^0.5.0",
+    "scss-compile": "^0.1.7"
   },
   "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "browser-sync": "^2.13.0",
-    "font-awesome": "^4.6.3",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.10",
-    "gulp-header": "^1.8.7",
-    "gulp-less": "^3.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^1.5.4",
-    "jquery": "^1.11.3"
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.11.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-agency.git"
-  }
+  "scripts": {
+    "test": "npm -v",
+    "build-css": "node-sass --include-path scss scss/agency.scss   css/agency.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "ha",
+  "license": "ISC"
 }

@@ -8,6 +8,11 @@ body {
     @include body-font;
 }
 
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+    color:white;
+}
+
 .text-muted {
     color: $gray-light;
 }
@@ -63,6 +68,11 @@ h1, h2, h3, h4, h5, h6 {
 
 // Restyled Primary Buttons
 
+.btn-centered{
+    display:block !important;
+    margin:auto !important;
+}
+
 .btn-primary {
     border-color:$theme-secondary !important;
     background:transparent !important; 
@@ -111,7 +121,8 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 15px 30px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-weight: 700;
+	font-size:1.1em;
+	font-weight: 400;
 	outline: none;
 	position: relative;
     z-index:2;
@@ -309,6 +320,20 @@ h1, h2, h3, h4, h5, h6 {
         line-height:normal;
 
     }
+    
+    .services-item {
+        .services-caption {
+            @include transform(translateY(100%));
+        }
+        &:hover{
+            .services-caption{
+                @include transform(translateY(0px));
+            }
+            img{
+                @include transform(translateY(-60px));
+            }
+        }
+    }
 }
 
 // Navbar Change on Scroll
@@ -359,7 +384,6 @@ header {
                 margin: auto;
                 bottom: 0;
                 text-align: center;
-                margin-bottom: 10px;
                 margin-top: 10px;
                 width   : 40%;  /* or 100px */
                 border-bottom:2px solid $theme-secondary;
@@ -383,7 +407,6 @@ header {
         }
     }
 }
-
 @media(min-width:768px) {
     header {
         .intro-text {
@@ -393,6 +416,9 @@ header {
                 @include serif-font;
                 font-size: 40px;
                 line-height: 40px;
+                margin-bottom: 10px;
+            }
+            .intro-subtitle{
                 margin-bottom: 25px;
             }
             .intro-heading {
@@ -458,6 +484,19 @@ section {
     text-transform: none;
 }
 
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
 // services Section
 
 #services {
@@ -475,12 +514,13 @@ section {
             max-width: 400px;
             margin: 0 auto;  
         }
+        .services-caption, img{
+            @include transition(transform 0.4s, opacity 0.1s);
+        }
         .services-caption {
             position: absolute;
             height:80px;
-            @include transform(translateY(100%));
             width:100%;
-            @include transition(transform 0.4s, opacity 0.1s);
             bottom:0px;
             left:0px;
             margin: 0 auto;
@@ -497,12 +537,6 @@ section {
                 font-style: italic;
                 font-size: 16px;
                 margin: 0;
-            }
-        }
-        &:hover{
-            .services-caption{
-                
-                @include transform(translateY(0px));
             }
         }
     }
@@ -838,6 +872,13 @@ ul.social-buttons {
         margin: 0;
         height: 100%;
         width: auto;
+    }
+    .modal-text{
+        text-align: justify !important;
+        display: inline-block;
+        vertical-align: bottom;
+        float: none;
+        
     }
     .modal-content {
         border-radius: 0;
