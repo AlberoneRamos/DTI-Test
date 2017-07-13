@@ -355,7 +355,8 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 1.5em; } }
 
 header {
-  background: #353237;
+  background-image: url("../img/map-image.png");
+  background-color: #353237;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -685,7 +686,6 @@ aside.clients img {
 
 section#contact {
   background-color: #2a2b30;
-  background-image: url("../img/map-image.png");
   background-position: center;
   background-repeat: no-repeat; }
   section#contact .section-heading {
@@ -760,11 +760,12 @@ ul.social-buttons {
     line-height: 40px;
     color: white;
     outline: none;
+    background-color: #3e3990;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s; }
     ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
-      background-color: #3e3990; }
+      background-color: #2e2b6b; }
 
 .btn:focus,
 .btn:active,
@@ -909,3 +910,123 @@ path#middle {
 .cross path#middle {
   stroke-dashoffset: -115px;
   stroke-dasharray: 1px 220px; }
+
+.inputfile {
+  border-radius: 10px;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  color: #2055a6; }
+  .inputfile + .input-text {
+    -webkit-transition: all 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
+    -moz-transition: all 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
+    -o-transition: all 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
+    -ms-transition: all 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
+    transition: all 0.4s cubic-bezier(0.02, 0.01, 0.47, 1);
+    font-size: 1.75rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */ }
+    .inputfile + .input-text svg {
+      width: 2em;
+      height: 2em;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      vertical-align: middle;
+      fill: white; }
+  .inputfile:focus + .input-text {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px; }
+
+.inputfile-6 + .input-text {
+  color: #33aab7;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  padding: 0;
+  width: 100% !important;
+  border-radius: 4px; }
+  .inputfile-6 + .input-text span {
+    padding: 0px 10px !important;
+    vertical-align: middle !important;
+    width: 60%; }
+  .inputfile-6 + .input-text strong {
+    text-align: center;
+    width: 40%;
+    font-size: 2rem; }
+
+.inputfile-6 + label span,
+.inputfile-6 + label strong {
+  padding: 0.625rem 1.25rem; }
+
+.inputfile-6:focus + .input-text,
+.inputfile-6 + .input-text:hover {
+  border-color: #28858f; }
+
+.inputfile-6 + .input-text span,
+.inputfile-6 + .input-text strong {
+  padding: 2vh 3vh;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  /* 10px 20px */ }
+
+.inputfile-6 + .input-text span {
+  min-height: 2em;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  vertical-align: top; }
+
+.inputfile-6 + .input-text strong {
+  height: 100%;
+  color: #f1e5e6;
+  background-color: #33aab7;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+.inputfile-6:focus + .input-text strong,
+.inputfile-6 + .input-text:hover strong {
+  background-color: #28858f; }
+
+.btn-large {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important; }
+
+@media screen and (max-width: 50em) {
+  .inputfile-6 + .input-text strong {
+    display: block;
+    width: 100%; }
+  .inputfile-6 + .input-text span {
+    width: 100%;
+    text-align: center;
+    height: 7vh;
+    line-height: 7vh; } }

@@ -349,8 +349,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    // background-image: url('../img/header-bg.jpg');
-    background: #353237;
+    background-image: url('../img/map-image.png');
+    background-color: #353237;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -767,7 +767,6 @@ aside.clients {
 
 section#contact {
     background-color: $gray-darker;
-    background-image: url('../img/map-image.png');
     background-position: center;
     background-repeat: no-repeat;
     .section-heading {
@@ -848,13 +847,14 @@ ul.social-buttons {
             line-height: 40px;
             color: white;
             outline: none;
+            background-color:$theme-secondary;
             -webkit-transition: all 0.3s;
             -moz-transition: all 0.3s;
             transition: all 0.3s;
             &:hover,
             &:focus,
             &:active {
-                background-color: $theme-secondary;
+                background-color: darken($theme-secondary,10%);
             }
         }
     }
@@ -1025,4 +1025,124 @@ path#middle {
 .cross path#middle {
     stroke-dashoffset: -115px;
     stroke-dasharray: 1px 220px;
+}
+
+.inputfile {
+    border-radius:10px;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    color: $theme-alternative;
+    & + .input-text {
+        @include transition(all 0.4s cubic-bezier(.02, .01, .47, 1));
+        font-size: 1.75rem;
+        /* 20px */
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        padding: 0.625rem 1.25rem;
+        /* 10px 20px */
+        & svg {
+            width: 2em;
+            height: 2em;
+            @include transition(all 0.3s ease-in-out);
+            vertical-align: middle;
+            fill: white;
+        }
+    }
+    
+    &:focus + .input-text{
+        outline: 1px dotted #000;
+        outline: -webkit-focus-ring-color auto 5px;
+    }
+}
+
+.inputfile-6{
+    & + .input-text {
+        color: $theme-primary;
+        @include transition(all 0.3s ease-in-out);
+        background-color: lighten($theme-primary,80%);
+        padding: 0;
+        width:100% !important;
+        border-radius:4px;
+        & span{
+            padding: 0px 10px !important;
+            vertical-align: middle !important;
+            width:60%;
+        }
+        & strong{
+            text-align:center;
+            width:40%;
+            font-size:2rem;
+        }
+    }
+    
+    & + label span,
+    & + label strong {
+        padding: 0.625rem 1.25rem;
+    }
+    
+    &:focus + .input-text,
+    & + .input-text:hover {
+        border-color: darken($theme-primary,10%);
+    }
+    & + .input-text span,
+    & + .input-text strong {
+        padding: 2vh 3vh;
+        @include transition(all 0.3s ease-in-out);
+        /* 10px 20px */
+    }
+    
+    & + .input-text span {
+        min-height: 2em;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @include transition(all 0.3s ease-in-out);
+        overflow: hidden;
+        vertical-align: top;
+    }
+    
+    & + .input-text strong {
+        height: 100%;
+        color: #f1e5e6;
+        background-color: $theme-primary;
+        display: inline-block;
+        @include transition(all 0.3s ease-in-out);
+    }
+    
+    &:focus + .input-text strong,
+    & + .input-text:hover strong {
+        background-color: darken($theme-primary,10%);
+    }
+}
+
+
+.btn-large{
+    width:100%;
+    max-width:100%;
+    margin:0 !important;
+    
+}
+
+
+@media screen and (max-width: 50em) {
+	.inputfile-6 + .input-text {
+	    & strong {
+    		display: block;
+    		width:100%;
+    	}
+    	& span{
+    	    width:100%;
+    	    text-align:center;
+    	    height:7vh;
+    	    line-height:7vh;
+    	}
+	}
 }
