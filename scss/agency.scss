@@ -110,6 +110,19 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+
+.btn-colorize-alternative{
+    @include colorize-button($theme-alternative !important,transparent !important,$theme-alternative !important);
+}
+
+.btn-colorize-primary{
+    @include colorize-button($theme-primary !important,transparent !important,$theme-primary !important);
+}
+
+.btn-colorize-secondary{
+    @include colorize-button($theme-secondary !important,transparent !important,$theme-secondary !important);
+}
+
 .btn {
 	cursor: pointer;
 	width:220px;
@@ -471,6 +484,13 @@ section {
     }
 }
 
+@include placeholder{
+    color:$theme-alternative;
+    @include heading-font;
+    font-weight:500;
+    opacity:1;
+}
+
 @media(min-width:768px) {
     section {
         padding: 150px 0;
@@ -737,6 +757,28 @@ section {
 }
 
 // Team Section
+section#team{
+    .form-group {
+        margin-bottom: 25px;
+        input,
+        textarea {
+            padding: 20px;
+        }
+        input.form-control {
+            height: auto;
+        }
+        textarea.form-control {
+            height: 236px;
+        }
+    }
+    .form-control:focus {
+        border-color: $theme-alternative;
+        box-shadow: none;
+    }
+    .text-danger {
+        color: $theme-danger;
+    }
+}
 
 .team-member {
     text-align: center;
@@ -789,30 +831,11 @@ section#contact {
         border-color: $theme-primary;
         box-shadow: none;
     }
-    ::-webkit-input-placeholder {
-       @include heading-font;
-       font-weight: 700;
-       color: $gray-lighter;
-    }
-    :-moz-placeholder { /* Firefox 18- */
-       @include heading-font;
-       font-weight: 700;
-       color: $gray-lighter;
-    }
-    ::-moz-placeholder {  /* Firefox 19+ */
-       @include heading-font;
-       font-weight: 700;
-       color: $gray-lighter;
-    }
-    :-ms-input-placeholder {  
-       @include heading-font;
-       font-weight: 700;
-       color: $gray-lighter;
-    }
     .text-danger {
         color: $theme-danger;
     }
 }
+
 
 // Footer
 
@@ -1065,32 +1088,33 @@ path#middle {
 
 .inputfile-6{
     & + .input-text {
-        color: $theme-primary;
+        color: $theme-secondary;
         @include transition(all 0.3s ease-in-out);
-        background-color: lighten($theme-primary,80%);
+        background-color: lighten($theme-secondary,80%);
         padding: 0;
         width:100% !important;
         border-radius:4px;
         & span{
-            padding: 0px 10px !important;
+            padding: 0;
             vertical-align: middle !important;
             width:60%;
         }
         & strong{
+            font-weight:300;
             text-align:center;
             width:40%;
             font-size:2rem;
+            & span{
+                width:100%;
+                padding: 0;
+                min-height: 0;
+            }
         }
     }
     
     & + label span,
     & + label strong {
         padding: 0.625rem 1.25rem;
-    }
-    
-    &:focus + .input-text,
-    & + .input-text:hover {
-        border-color: darken($theme-primary,10%);
     }
     & + .input-text span,
     & + .input-text strong {
@@ -1112,31 +1136,70 @@ path#middle {
     & + .input-text strong {
         height: 100%;
         color: #f1e5e6;
-        background-color: $theme-primary;
+        background-color: $theme-secondary;
         display: inline-block;
         @include transition(all 0.3s ease-in-out);
-    }
-    
-    &:focus + .input-text strong,
-    & + .input-text:hover strong {
-        background-color: darken($theme-primary,10%);
     }
 }
 
 
 .btn-large{
     width:100%;
+    min-width:240px;
     max-width:100%;
     margin:0 !important;
     
 }
 
+.form-control{
+    color:$theme-alternative;
+}
+
+@media(min-width:768px){
+    .input-text{
+        & strong{
+            position:relative;
+            & i{
+                width:100%;
+                overflow:hidden;
+                position: absolute;
+                height:100%;
+                left: 0;
+                top: 0;
+                &:before{
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    line-height: 1.7;
+                    top: -100%;
+                    font-size: 180%;
+                    left: 0;
+                    @include transition(all 0.3s);
+                }
+            }
+        }
+        &:hover{
+            & strong{
+                & span{
+                    @include transform(translateY(300%));
+                }
+                & i:before{
+                    top: 0;
+                }
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 50em) {
 	.inputfile-6 + .input-text {
 	    & strong {
     		display: block;
-    		width:100%;
+            width:100%;
+            & span{
+                padding:0;
+                width:80%;
+            }
     	}
     	& span{
     	    width:100%;

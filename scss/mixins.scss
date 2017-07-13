@@ -4,43 +4,27 @@
 
 // Bootstrap Button Variant
 
-@mixin button-variant($color, $background, $border)
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+
+@mixin colorize-button($color, $background, $border)
 {
   color: $color;
   background-color: $background;
-  border-color: $border;
-
-  &:hover,
-  &:focus,
-  &:active,
-  &.active,
-  .open .dropdown-toggle{
-    color: $color;
-    background-color: darken($background, 10%);
-        border-color: darken($border, 12%);
+  border: 3px solid $border;
+  &:after{
+    background-color:$border;
   }
-  &:active,
-  &.active,
-  .open .dropdown-toggle{
-    background-image: none;
-  }
-  &.disabled,
-  &[disabled],
-  fieldset[disabled]{
-    &,
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      background-color: $background;
-      border-color: $border;
+  &:hover{
+      color:#fff !important;
     }
-  }
-
-  .badge {
-    color: $background;
-    background-color: $color;
-  }
+    &:active{
+      color:#fff !important;
+    }
 }
 
 // Background Cover Mixin
