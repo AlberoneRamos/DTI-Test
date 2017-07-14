@@ -493,7 +493,7 @@ section {
 
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 100px 0;
     }
 }
 
@@ -527,7 +527,7 @@ section {
         margin:5px !important;
         display: inline-block ;
         max-width:350px;
-        max-height:250px;
+        max-height:230px;
         .services-link {
             display: block;
             position: relative;
@@ -756,27 +756,69 @@ section {
     }
 }
 
+section#send-curriculum{
+    padding-top:20px;
+}
+
 // Team Section
 section#team{
+    .img-div{
+        height:230px;
+        margin-bottom:20px;
+        overflow:hidden;
+        max-width:345px;
+        img{
+            max-width:130%;
+        }
+    }
+    .error.form-group {
+        .form-control{
+            border-color:$theme-alternative;
+        }
+    }
+    h3.section-subheading {
+        margin-bottom: 25px;
+    }
     .form-group {
         margin-bottom: 25px;
-        input,
-        textarea {
+        position: relative;
+        input,textarea {
             padding: 20px;
         }
-        input.form-control {
+        select{
+            padding: 20px !important;
+        }
+        input.form-control ,select{
             height: auto;
+            position:relative;
         }
         textarea.form-control {
-            height: 236px;
+            height: 234px;
         }
     }
     .form-control:focus {
-        border-color: $theme-alternative;
+        border-color: $theme-primary;
         box-shadow: none;
     }
     .text-danger {
-        color: $theme-danger;
+            display: inline;
+            position: absolute;
+            display: block;
+            width: 100%;
+            top: 0;
+            & ul{
+                border-radius:3px;
+                padding: 2px 5px;
+                background: $theme-secondary;
+                display:inline-block;
+                position: absolute;
+                top: -2.5vh;
+                right: 2vw;
+                color: white;
+                & li{
+                    list-style: none;
+                }
+            }
     }
 }
 
@@ -841,10 +883,12 @@ section#contact {
 
 footer {
     padding: 25px 0;
+    background: $gray-darker;
     text-align: center;
     span.copyright {
         line-height: 40px;
         @include heading-font;
+        color:$gray-lighter;
         text-transform: none;
     }
     ul.quicklinks {
@@ -1058,7 +1102,7 @@ path#middle {
     overflow: hidden;
     position: absolute;
     z-index: -1;
-    color: $theme-alternative;
+    color: $theme-primary;
     & + .input-text {
         @include transition(all 0.4s cubic-bezier(.02, .01, .47, 1));
         font-size: 1.75rem;
@@ -1086,12 +1130,15 @@ path#middle {
     }
 }
 
+
+
 .inputfile-6{
     & + .input-text {
         color: $theme-secondary;
         @include transition(all 0.3s ease-in-out);
         background-color: lighten($theme-secondary,80%);
         padding: 0;
+        border: 1px solid #ccc;
         width:100% !important;
         border-radius:4px;
         & span{
@@ -1152,7 +1199,7 @@ path#middle {
 }
 
 .form-control{
-    color:$theme-alternative;
+    color:$theme-primary;
 }
 
 @media(min-width:768px){
@@ -1196,8 +1243,11 @@ path#middle {
 	    & strong {
     		display: block;
             width:100%;
+            padding:0;
             & span{
                 padding:0;
+                margin-left:10px;
+                display:inline;
                 width:80%;
             }
     	}
