@@ -1,37 +1,38 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Agency](http://startbootstrap.com/template-overviews/agency/)
+# "Out Among The Stars"
 
-[Agency](http://startbootstrap.com/template-overviews/agency/) is a one page agency portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a responsive timeline, and a working PHP contact form.
+It's midnight at a liquor store in Texas
+Closing time another day is done
+When a boy walks in the door and points a pistol
+He can't find a job but Lord he's found a gun
 
-## Getting Started
+He pulls it off with no trace of confrontation
+That he lets the old man run out in the street
+Even though he knows they'll come with guns a blazing
+Already he can feel that great relief
 
-Several options are available to get started quickly:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/agency/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-agency.git`
-* Fork the repo
+Oh how many travelers get wear-y
+Bearing both their burdens and their scars
+Don't you think they'd love to start all over
+And fly like eagles out among the stars
 
-## Developing Using Source Files
+He pictures the arrival of the cruisers
+Sees that old familiar anger in their eyes
+He knows that when they're shooting at this loser
+They'll be aiming at the demons in their lives
 
-To use the source files, you will need to have npm installed globally along with Gulp.js. To start:
-* Run `npm install` in the root directory
-* Run `gulp dev` and edit the files as needed
+Oh how many travelers get wear-y
+Bearing both their burdens and their scars
+Don't you think they'd love to start all over
+And fly like eagles out among the stars
 
-If you need to update the plugins included with this template, simply run the following tasks:
-* First run `npm update` to update the dependencies
-* Then run `gulp copy` to copy the new versions to their proper destinations
+The evening news carries all the details
+He dies in every living room in town
+In his own a bottle's thrown in anger
+And his father cries we'll never live this down
 
-## Bugs and Issues
+Oh how many travelers get wear-y
+Bearing both their burdens and their scars
+Don't you think they'd love to start all over
+And fly like eagles out among the stars
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-agency/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/agency/).
-
-## Creator
-
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
-
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-agency/blob/gh-pages/LICENSE) license.
+And fly like eagles out among the stars
