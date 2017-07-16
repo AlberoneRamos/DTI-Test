@@ -13,12 +13,6 @@
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
     });
-    new Typed('.intro-heading', {
-        strings: ["Dive. Think. Innovate."],
-        typeSpeed: 100,
-        showCursor: true,
-        cursorChar: 'I'
-    });
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',

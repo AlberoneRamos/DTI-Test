@@ -22,8 +22,9 @@ body {
 }
 
 p {
-    font-size: 14px;
-    line-height: 1.75;
+    font-size: 16px;
+    line-height: 1.5;
+    @include serif-font;
 }
 
 p.large {
@@ -361,6 +362,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+
 header {
     background-image: url('../img/map-image.png');
     background-color: #353237;
@@ -371,14 +373,15 @@ header {
     text-align: center;
     color: white;
     .intro-text {
-        padding-top: 100px;
-        padding-bottom: 50px;
+        position:relative;
+        padding-top: 50%;
+        padding-bottom: 100px;
         .intro-lead-in {
             @include serif-font;
             font-size: 22px;
             line-height: 22px;
-            margin-bottom: 25px;
             margin:auto;
+            margin-top:5vh;
             &:before {    
                 content: " ";
                 display: block;
@@ -416,6 +419,7 @@ header {
         .intro-subtitle{
             display:block;
             font-size:14px;
+            margin-bottom:10vh;
             @include serif-font;
         }
     }
@@ -429,7 +433,7 @@ header {
                 @include serif-font;
                 font-size: 40px;
                 line-height: 40px;
-                margin-bottom: 10px;
+                margin-top:5vh;
             }
             .intro-subtitle{
                 margin-bottom: 25px;
@@ -447,6 +451,9 @@ header {
 }
 
 
+.full-page-section{
+    height:100vh;
+}
 
 .typed-cursor {
     display:inline-block;
@@ -465,7 +472,7 @@ section {
     h2.section-heading {
         font-size: 40px;
         margin-top: 0;
-        margin-bottom: 15px;
+        margin-bottom: 40px;
         &:after{
             display:block;
             content:' ';
@@ -526,8 +533,8 @@ section {
         padding:0 !important;
         margin:5px !important;
         display: inline-block ;
-        max-width:350px;
-        max-height:230px;
+        max-width: 400px;
+        max-height: 300px;
         .services-link {
             display: block;
             position: relative;
@@ -535,11 +542,12 @@ section {
             margin: 0 auto;  
         }
         .services-caption, img{
+            max-width: 110%;
             @include transition(transform 0.4s, opacity 0.1s);
         }
         .services-caption {
             position: absolute;
-            height:80px;
+            height:90px;
             width:100%;
             bottom:0px;
             left:0px;
@@ -547,15 +555,17 @@ section {
             color:lighten($theme-secondary,15%);
             background-color: $gray-darker;
             text-align: center;
-            padding: 15px;
+            padding: 10px 15px;
             h4 {
                 text-transform: none;
                 margin: 0;
+                margin-bottom:10px;
             }
             p {
                 @include serif-font;
                 font-style: italic;
                 font-size: 16px;
+                line-height:20px;
                 margin: 0;
             }
         }
@@ -625,6 +635,7 @@ section {
             margin-left: 0;
             width: 80px;
             height: 80px;
+            overflow:hidden;
             position: absolute;
             z-index: 100;
             background-color: $theme-primary;
@@ -761,23 +772,54 @@ section#send-curriculum{
 }
 
 // Team Section
-section#team{
+section#workspace{
     .img-div{
         height:230px;
         margin-bottom:20px;
+        margin-left:15px;
+        padding-left:0;
         overflow:hidden;
         max-width:345px;
         img{
             max-width:130%;
         }
     }
+    h3.section-subheading {
+    }
+    
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 50px;
+    img {
+        margin: 0 auto;
+        border: 7px solid white;
+    }
+    h4 {
+        margin-top: 25px;
+        margin-bottom: 0;
+        text-transform: none;
+    }
+    p {
+        margin-top: 0;
+    }
+}
+
+// Clients Aside
+
+aside.clients {
+    img {
+        margin: 50px auto;
+    }
+}
+
+// Contact Section
+section#send-curriculum{
     .error.form-group {
         .form-control{
             border-color:$theme-alternative;
         }
-    }
-    h3.section-subheading {
-        margin-bottom: 25px;
     }
     .form-group {
         margin-bottom: 25px;
@@ -821,60 +863,12 @@ section#team{
             }
     }
 }
-
-.team-member {
-    text-align: center;
-    margin-bottom: 50px;
-    img {
-        margin: 0 auto;
-        border: 7px solid white;
-    }
-    h4 {
-        margin-top: 25px;
-        margin-bottom: 0;
-        text-transform: none;
-    }
-    p {
-        margin-top: 0;
-    }
-}
-
-// Clients Aside
-
-aside.clients {
-    img {
-        margin: 50px auto;
-    }
-}
-
-// Contact Section
-
 section#contact {
     background-color: $gray-darker;
     background-position: center;
     background-repeat: no-repeat;
     .section-heading {
         color: white;
-    }
-    .form-group {
-        margin-bottom: 25px;
-        input,
-        textarea {
-            padding: 20px;
-        }
-        input.form-control {
-            height: auto;
-        }
-        textarea.form-control {
-            height: 236px;
-        }
-    }
-    .form-control:focus {
-        border-color: $theme-primary;
-        box-shadow: none;
-    }
-    .text-danger {
-        color: $theme-danger;
     }
 }
 
@@ -885,6 +879,10 @@ footer {
     padding: 25px 0;
     background: $gray-darker;
     text-align: center;
+    p{
+        margin-bottom:0;
+        color:white;
+    }
     span.copyright {
         line-height: 40px;
         @include heading-font;
@@ -895,6 +893,10 @@ footer {
         margin-bottom: 0;
         line-height: 40px;
         @include heading-font;
+        color:$theme-primary;
+        img{
+            vertical-align: text-bottom;
+        }
         text-transform: none;
     }
 }
@@ -941,6 +943,8 @@ ul.social-buttons {
         width: auto;
     }
     .modal-text{
+        margin-top:25px;
+        text-indent: 25px;
         text-align: justify !important;
         display: inline-block;
         vertical-align: bottom;
@@ -954,7 +958,7 @@ ul.social-buttons {
         box-shadow: none;
         border: none;
         min-height: 100%;
-        padding: 100px 0;
+        padding: 30px 0;
         text-align: center;
         h2 {
             margin-bottom: 15px;
@@ -962,6 +966,11 @@ ul.social-buttons {
         }
         p {
             margin-bottom: 30px;
+        }
+        .modal-text{
+            p{
+                text-align: justify;
+            }
         }
         p.item-intro {
             margin: 20px 0 30px;
@@ -978,9 +987,10 @@ ul.social-buttons {
         }
     }
     .close-modal {
+        z-index: 99;
         position: absolute;
-        width:75px;
-        height:75px;
+        width:60px;
+        height:25px;
         background-color:transparent;
         top: 25px;
         right: 25px;
@@ -989,7 +999,7 @@ ul.social-buttons {
             opacity: 0.3;
         }
         .lr {
-            height:75px;
+            height:25px;
             width:1px;
             margin-left:35px;
             background-color:$gray-darker;
@@ -1000,7 +1010,7 @@ ul.social-buttons {
             /* Safari and Chrome */
             z-index:1051;
             .rl {
-                height:75px;
+                height:25px;
                 width:1px;
                 background-color:$gray-darker;
                 transform: rotate(90deg);
@@ -1016,6 +1026,19 @@ ul.social-buttons {
         opacity: 0;
         display: none;
     }
+}
+
+@media(min-width:768px){
+    .modal{
+        margin: auto;
+        width: 90%;
+        height: 85%;
+    }
+
+}
+
+#not-so-secret-link{
+      cursor:text;  
 }
 
 // Highlight Color Customization
@@ -1258,4 +1281,118 @@ path#middle {
     	    line-height:7vh;
     	}
 	}
+}
+
+section#depoimentos{
+    background-image:url('../img/team/depoimentos.png');
+    background-color:#3e3694;
+    background-position:right;
+    h2{
+        display:inline-block;
+        &:after{
+            border-color:$theme-primary;
+        }
+    }
+    p{
+        text-align:justify;
+        text-indent: 25px;
+    }
+    background-size:auto;
+    background-repeat:no-repeat;
+    color:white;
+    
+}
+
+.arrows {
+    position: absolute;
+    left: 0;
+    bottom: -8vh;
+    width:30px;
+    height:45px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    & path {
+        stroke: $theme-primary;
+        fill: transparent;
+        stroke-width: 1.5px;
+        animation: arrow 2s infinite;
+        -webkit-animation: arrow 2s infinite;
+        @for $i from 0 to 3{
+            &:nth-child(#{$i+1}){
+                animation-delay: #{-1+0.5*$i}s;
+                -webkit-animation-delay: #{-1+0.5*$i}s;
+            }
+        }
+    }
+}
+
+#arrow-scroll{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10vh;
+    @include serif-font;
+    &:hover{
+        text-decoration:none;
+        color:$theme-primary;
+    }
+}
+
+section#design-sprint{
+    background-image:url('../img/services/design_sprint.png');
+    background-color:$theme-primary;
+    background-repeat:no-repeat;
+    background-size: auto 100%;
+    background-position:right;
+    color:white;
+    h2{
+        margin-bottom:10px;
+        display:inline-block;
+    }
+    
+    .section-sub-heading{
+        text-indent:0px;
+        margin-bottom:20px;
+    }
+    
+    .section-text p{
+        text-indent:25px;
+        text-align:justify;
+    }
+}
+
+@media(min-width:768px){
+    section#design-sprint{
+        height:100vh;
+        a{
+            bottom:-15vh;
+        }
+    }
+}
+
+@media(min-width:768px){
+    .arrows{
+        bottom:2vh;
+    }
+    
+    #arrow-scroll{
+        bottom: 0;
+    }
+}
+
+@include keyframes(arrow){
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
