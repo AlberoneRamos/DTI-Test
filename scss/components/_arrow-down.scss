@@ -1,0 +1,45 @@
+.arrows {
+    position: absolute;
+    left: 0;
+    bottom: -8vh;
+    width: 30px;
+    height: 45px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    & path {
+        stroke: $theme-primary;
+        fill: transparent;
+        stroke-width: 1.5px;
+        animation: arrow 2s infinite;
+        -webkit-animation: arrow 2s infinite;
+        @for $i from 0 to 3 {
+            &:nth-child(#{$i+1}) {
+                animation-delay: #{-1+0.5*$i}s;
+                -webkit-animation-delay: #{-1+0.5*$i}s;
+            }
+        }
+    }
+}
+
+#arrow-scroll {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10vh;
+    @include serif-font;
+    &:hover {
+        text-decoration: none;
+        color: $theme-primary;
+    }
+}
+
+@media(min-width:768px) {
+    .arrows {
+        bottom: 2vh;
+    }
+    #arrow-scroll {
+        bottom: 0;
+    }
+}

@@ -1,0 +1,25 @@
+footer {
+    padding: 25px 0;
+    background: $gray-darker;
+    text-align: center;
+    p {
+        margin-bottom: 0;
+        color: white;
+    }
+    span.copyright {
+        line-height: 40px;
+        @include heading-font;
+        color: $gray-lighter;
+        text-transform: none;
+    }
+    ul.quicklinks {
+        margin-bottom: 0;
+        line-height: 40px;
+        @include heading-font;
+        color: $theme-primary;
+        img {
+            vertical-align: text-bottom;
+        }
+        text-transform: none;
+    }
+}

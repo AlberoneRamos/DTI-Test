@@ -1,0 +1,203 @@
+.hamburgerButton {
+    @include transition(all 0.4s cubic-bezier(.02, .01, .47, 1));
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    width: 70px;
+    height: 50px;
+    z-index: 30;
+    & svg {
+        width: 100px;
+        cursor: pointer;
+    }
+    & path {
+        fill: none;
+        @include transition(stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
+        stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25));
+        stroke-width: 40px;
+        stroke-linecap: round;
+        stroke: $theme-primary;
+        stroke-dashoffset: 0px;
+    }
+}
+
+.cross {
+    path {
+        stroke: $theme-alternative;
+    }
+}
+
+path#top,
+path#bottom {
+    stroke-dasharray: 240px 950px;
+}
+
+path#middle {
+    stroke-dasharray: 240px 240px;
+}
+
+.cross path#top,
+.cross path#bottom {
+    stroke-dashoffset: -650px;
+    stroke-dashoffset: -650px;
+}
+
+.cross path#middle {
+    stroke-dashoffset: -115px;
+    stroke-dasharray: 1px 220px;
+}
+
+.navbar-custom {
+    background-color: $gray-darker;
+    border-color: transparent;
+    .navbar-brand {
+        & img {
+            max-width: 80px;
+            min-width: 60px;
+            position: relative;
+            margin-bottom: auto;
+            bottom: 60%;
+        }
+        color: $theme-primary;
+        @include script-font;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: darken($theme-primary, 10%);
+        }
+    }
+    .navbar-collapse {
+        border: none;
+    }
+    .navbar-toggle {
+        @include heading-font;
+        color: $theme-primary;
+        border: none;
+        font-size: 12px;
+        &:hover,
+        &:focus {
+            background-color: transparent;
+        }
+    }
+    .nav {
+        li {
+            a {
+                @include heading-font;
+                font-weight: 400;
+                letter-spacing: 1px;
+                color: white;
+                &:hover,
+                &:active {
+                    color: $theme-primary;
+                    outline: none;
+                    &:before {
+                        opacity: 1;
+                    }
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+                &:hover {
+                    &:before {
+                        @include transform(translateX(-12px));
+                    }
+                    &:after {
+                        @include transform(translateX(12px));
+                    }
+                }
+                &:focus {
+                    &:before {
+                        @include transform(translateX(-9px));
+                    }
+                    &:after {
+                        @include transform(translateX(9px));
+                    }
+                }
+                &:before,
+                &:after {
+                    @include transition(transform 0.3s, opacity 0.2s);
+                    top: 28%;
+                    opacity: 0;
+                }
+                &:before {
+                    @include pseudo($content: '[');
+                    @include transform(translateX(15px));
+                    left: 15px;
+                }
+                &:after {
+                    @include pseudo($content: ']');
+                    @include transform(translateX(-15px));
+                    right: 15px;
+                }
+            }
+        }
+    }
+    .navbar-nav>.active>a {
+        border-radius: 0;
+        background-color: transparent;
+        display: inline-block;
+        color: $theme-primary;
+        &:before {
+            opacity: 1;
+            @include transform(translateX(-12px));
+        }
+        &:after {
+            opacity: 1;
+            @include transform(translateX(12px));
+        }
+    }
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        background-color: transparent;
+        color: darken($theme-primary, 10%);
+    }
+}
+
+@media(min-width:768px) {
+    .navbar-custom {
+        background-color: transparent;
+        padding: 25px 0;
+        -webkit-transition: padding 0.3s;
+        -moz-transition: padding 0.3s;
+        transition: padding 0.3s;
+        border: none;
+        .navbar-toggle {
+            display: none;
+        }
+        .navbar-brand {
+            & img {
+                max-width: 100px;
+                bottom: 80%;
+            }
+            font-size: 2em;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .navbar-nav>.active>a {
+            border-radius: 3px;
+        }
+        .nav {
+            li {
+                a {
+                    &:before,
+                    &:after {
+                        top: 32%;
+                    }
+                }
+            }
+        }
+    }
+    .navbar-custom.affix {
+        background-color: $gray-darker;
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 1.5em;
+        }
+    }
+    .typed-cursor {
+        font-size: 75px !important;
+        line-height: normal;
+    }
+}

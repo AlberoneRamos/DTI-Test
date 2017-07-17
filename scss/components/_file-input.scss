@@ -1,0 +1,147 @@
+.inputfile {
+    border-radius: 10px;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    color: $theme-primary;
+    &+.input-text {
+        @include transition(all 0.4s cubic-bezier(.02, .01, .47, 1));
+        font-size: 1.75rem;
+        /* 20px */
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        padding: 0.625rem 1.25rem;
+        /* 10px 20px */
+        & svg {
+            width: 2em;
+            height: 2em;
+            @include transition(all 0.3s ease-in-out);
+            vertical-align: middle;
+            fill: white;
+        }
+    }
+    &:focus+.input-text {
+        outline: 1px dotted #000;
+        outline: -webkit-focus-ring-color auto 5px;
+    }
+}
+
+.inputfile-6 {
+    &+.input-text {
+        color: $theme-secondary;
+        @include transition(all 0.3s ease-in-out);
+        background-color: lighten($theme-secondary, 80%);
+        padding: 0;
+        @include serif-font;
+        border: 1px solid #ccc;
+        width: 100% !important;
+        border-radius: 4px;
+        & span {
+            padding: 0;
+            vertical-align: middle !important;
+            width: 60%;
+        }
+        & strong {
+            font-weight: 300;
+            text-align: center;
+            width: 40%;
+            font-size: 2rem;
+            & span {
+                width: 100%;
+                padding: 0;
+                min-height: 0;
+            }
+        }
+    }
+    &+label span,
+    &+label strong {
+        padding: 0.625rem 1.25rem;
+    }
+    &+.input-text span,
+    &+.input-text strong {
+        padding: 2vh 3vh;
+        @include transition(all 0.3s ease-in-out);
+        /* 10px 20px */
+    }
+    &+.input-text span {
+        min-height: 2em;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @include transition(all 0.3s ease-in-out);
+        overflow: hidden;
+        vertical-align: top;
+    }
+    &+.input-text strong {
+        height: 100%;
+        color: #f1e5e6;
+        background-color: $theme-secondary;
+        display: inline-block;
+        @include transition(all 0.3s ease-in-out);
+    }
+}
+
+@media(min-width:768px) {
+    .input-text {
+        & strong {
+            position: relative;
+            & i {
+                width: 100%;
+                overflow: hidden;
+                position: absolute;
+                height: 100%;
+                left: 0;
+                top: 0;
+                &:before {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    line-height: 1.7;
+                    top: -100%;
+                    font-size: 180%;
+                    left: 0;
+                    @include transition(all 0.3s);
+                }
+            }
+        }
+        &:hover {
+            & strong {
+                & span {
+                    @include transform(translateY(300%));
+                }
+                & i:before {
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 50em) {
+    .inputfile-6+.input-text {
+        & strong {
+            display: block;
+            width: 100%;
+            padding: 0;
+            & span {
+                padding: 0;
+                margin-left: 10px;
+                display: inline;
+                width: 80%;
+            }
+        }
+        & span {
+            width: 100%;
+            text-align: center;
+            height: 7vh;
+            line-height: 7vh;
+        }
+    }
+}
