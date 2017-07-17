@@ -134,7 +134,7 @@ section#workspace {
     }
 }
 
-@media(min-width:768px){
+@include MQ(M){
     .img-div{
         margin-left: 15px;
     }
@@ -212,7 +212,7 @@ section#depoimentos {
     background-position: right;
     background-repeat: no-repeat;
     color: white;
-    height: 80vh;
+    height: 500px;
     h2 {
         display: inline-block;
         &:after {
@@ -228,11 +228,25 @@ section#depoimentos {
     }
 }
 
-@media(min-width:321px){
+@media(min-width:320px){
     section#depoimentos {
         button {
-            margin-top: 30vh;
+            margin-top: 10vh;
         }
+    }
+}
+
+@media(min-width:380px){
+    section#depoimentos {
+        button {
+            margin-top: 20vh;
+        }
+    }
+}
+
+@media(min-width:768px){
+    section#depoimentos {
+        height:80vh;
     }
 }
 
@@ -261,7 +275,7 @@ section#design-sprint {
     section#design-sprint {
         height: 100vh;
         a {
-            bottom: -15vh;
+            bottom: -10vh;
         }
     }
 }

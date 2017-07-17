@@ -17,7 +17,7 @@
   },
   "scripts": {
     "test": "npm -v",
-    "build-css": "node-sass --include-path scss scss/agency.scss   css/agency.css",
+    "build-css": "node-sass --include-path scss scss/agency.scss   css/agency.css --output-style compressed",
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "author": "ha",
