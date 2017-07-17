@@ -1,66 +1,66 @@
 @include keyframes(arrow) {
-	0% {
-		opacity: 0;
-	}
-	40% {
-		opacity: 1;
-	}
-	80% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-	}
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @include keyframes(blink) {
-	from,
-	to {
-		color: transparent;
-	}
-	50% {
-		color: $theme-primary;
-	}
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: $theme-primary;
+    }
 }
 
 @include keyframes(cd-bounce-2) {
-	0% {
-		opacity: 0;
-		@include transform(translateX(-100px));
-	}
-	60% {
-		opacity: 1;
-		@include transform(translateX(20px));
-	}
-	100% {
-		@include transform(translateX(0));
-	}
+    0% {
+        opacity: 0;
+        @include transform(translateX(-100px));
+    }
+    60% {
+        opacity: 1;
+        @include transform(translateX(20px));
+    }
+    100% {
+        @include transform(translateX(0));
+    }
 }
 
 @include keyframes(cd-bounce-1) {
-	0% {
-		opacity: 0;
-		@include transform(scale(.5));
-	}
-	60% {
-		opacity: 1;
-		@include transform(scale(1.2));
-	}
-	100% {
-		@include transform(scale(1));
-	}
+    0% {
+        opacity: 0;
+        @include transform(scale(.5));
+    }
+    60% {
+        opacity: 1;
+        @include transform(scale(1.2));
+    }
+    100% {
+        @include transform(scale(1));
+    }
 }
 
 @include keyframes(cd-bounce-2-inverse) {
-	0% {
-		opacity: 0;
-		@include transform(translateX(100px));
-	}
-	60% {
-		opacity: 1;
-		@include transform(translateX(-20px));
-	}
-	100% {
-		@include transform(translateX(0));
-	}
+    0% {
+        opacity: 0;
+        @include transform(translateX(100px));
+    }
+    60% {
+        opacity: 1;
+        @include transform(translateX(-20px));
+    }
+    100% {
+        @include transform(translateX(0));
+    }
 }
