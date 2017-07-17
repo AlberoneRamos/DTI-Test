@@ -224,7 +224,15 @@ section#depoimentos {
         text-align: justify;
     }
     button {
-        margin-top: 45% !important;
+        margin-top: 5vh;
+    }
+}
+
+@media(min-width:321px){
+    section#depoimentos {
+        button {
+            margin-top: 30vh;
+        }
     }
 }
 
